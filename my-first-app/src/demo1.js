@@ -10,7 +10,7 @@ class Ul extends Component {
       this.click = this.click.bind(this);
   }
   click(){
-    let arr2=['react','学起来','要多写'];
+    let arr2=['react','呵呵哒','啦啦啦'];
     this.setState({
       arr:arr2
     })

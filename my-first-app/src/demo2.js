@@ -4,7 +4,7 @@ class Ppa extends Component {
   constructor() {
     super();
     this.state={
-      list:['react','并不难'],
+      list:['react','还好'],
       num:0
     }
 
