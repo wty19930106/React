@@ -1,0 +1,136 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,dt{
+                margin: 0;
+                padding: 0;
+            }
+            ul,li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            img{
+                display: block;
+                border: 0;
+            }
+.clearFix:after{
+            content:".";
+            clear:both;
+                    display:block;
+                    height:0;
+                    overflow:hidden;
+                    visibility:hidden;
+}
+@rem:40rem;
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+header{
+    width: 602/@rem;
+    height: 57/@rem;
+    padding: 8/@rem 16/@rem 10/@rem 22/@rem;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+header a{
+  float: left;
+  height: 57/@rem;
+  line-height: 57/@rem;
+
+}
+.return{
+  margin-right: 180/@rem;
+}
+.home{
+  float: left;
+  color: #fff;
+  font-size: 40/@rem;
+  margin-right: 180/@rem;
+}
+header a img{
+  width: 40/@rem;
+  height: 40/@rem;
+  margin-top: 10/@rem;
+}
+.nav_list{
+  position: absolute;
+  left: 0;
+  top:75/@rem;
+  z-index: 11;
+  padding-left: 15/@rem;
+  background:#000;
+  height:0;
+  width:605/@rem;
+  transition:.5s;
+  overflow: hidden;
+}
+.nav_list li{
+  margin-bottom: 15/@rem;
+  height: 30/@rem;
+  line-height: 30/@rem;
+  font-size: 20/@rem;
+  color: #c9c9c9;
+}
+.nav_list li a{
+  list-style: none;
+}
+.movie_list{
+  flex-wrap: wrap;
+  justify-content:space-around;
+  display: flex;
+  padding:10/@rem;
+  margin-top: 75/@rem;
+}
+.movie_list dl{
+  width: 200/@rem;
+  margin-bottom: 15/@rem;
+}
+.movie_list dt{
+  width: 200/@rem;
+  height: 300/@rem;
+}
+.movie_list dt img{
+  width: 200/@rem;
+  height: 300/@rem;
+}
+.movie_list dd{
+  width: 200/@rem;
+}
+.movie_list dd h2{
+  font-size: 18/@rem;
+  text-align: center;
+  height: 32/@rem;
+  line-height: 32/@rem;
+  margin-bottom: 5/@rem;
+}
+.movie_list dd p{
+  font-size: 16/@rem;
+  text-align: center;
+  height: 20/@rem;
+  line-height: 20/@rem;
+}
+.page_change{
+  width: 220/@rem;
+  height: 24/@rem;
+  position: relative;
+  left: 250/@rem;
+}
+.page_change button{
+  margin-bottom: 30/@rem;
+  margin-right: 20/@rem;
+  float: left;
+  font-size: 24/@rem;
+  line-height: 30/@rem;
+  height: 30/@rem;
+  background: #2c9e29;
+  color: #fff;
+}

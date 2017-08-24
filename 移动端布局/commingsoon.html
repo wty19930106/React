@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/commingsoon.css"/>
+  <title>Commingsoon</title>
+</head>
+<body>
+  <header>
+    <a href="javascript:;" class="return"><img src="img/more.png" alt=""></a>
+    <span class="home">即将上映</span>
+    <a href="./login.html" class="list"><img src="img/people.png" alt=""></a>
+  </header>
+    <ul class="nav_list">
+      <li><a href="./index.html">首页</a></li>
+      <li><a href="./northAmerica.html">北美票房榜</a></li>
+      <li><a href="./commingsoon.html">即将上映</a></li>
+      <li>搜索影片</li>
+    </ul>
+    <div class="movie_list">
+      <!--<dl>
+        <dt><img src="img/2.jpg" alt=""></dt>
+        <dd>
+          <h2>战狼2</h2>
+          <p>上映时间：2017年9月</p>
+        </dd>
+      </dl>-->
+    </div>
+    <div class="page_change">
+      <button>上一页</button>
+      <button>下一页</button>
+    </div>
+<script type="text/javascript">
+  var pixelRatio = 1 / window.devicePixelRatio;
+  document.write('<meta name="viewport" content="width=device-width,initial-scale='+ pixelRatio +',minimum-scale='+ pixelRatio +',maximum-scale='+ pixelRatio +',user-scalable=no" />');
+  var html=document.getElementsByTagName("html")[0];
+  var pageWidth=html.getBoundingClientRect().width;
+  html.style.fontSize=pageWidth/16+"px";
+
+  let onOff = true;
+  $('.return').click(function(){
+    if (onOff) {
+      $('.nav_list').css('height', '400');
+
+    }else {
+      $('.nav_list').css('height', '0');
+    }
+    onOff = !onOff;
+  });
+
+  $.ajax({
+    url: 'https://api.douban.com/v2/movie/coming_soon',
+    dataType:'jsonp',
+    success:function(json){
+      let movies = '';
+      console.log(json.subjects);
+      $(json.subjects).each((i,e)=>{
+          movies+=`<dl>
+            <dt><img src=${e.images.medium} alt=""></dt>
+            <dd>
+              <h2>${e.title}</h2>
+              <p>上映时间：${e.year}</p>
+            </dd>
+          </dl>`
+      })
+      $('.movie_list').html(movies)
+    }
+
+  });
+
+</script>
+</body>
+</html>

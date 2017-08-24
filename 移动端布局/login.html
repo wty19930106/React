@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/login.css"/>
+  <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <header>
+    <a href="javascript:;" class="return"><img src="img/more.png" alt=""></a>
+    <span class="home">用户登录</span>
+    <a href="./login.html" class="list"><img src="img/people.png" alt=""></a>
+  </header>
+  <ul class="nav_list">
+    <li><a href="./index.html">首页</a></li>
+    <li><a href="./northAmerica.html">北美票房榜</a></li>
+    <li><a href="./commingsoon.html">即将上映</a></li>
+    <li>搜索影片</li>
+  </ul>
+  <img src="img/login-logo.png" alt="" class="login-logo">
+  <input type="text" name="" placeholder="用户名" class="login-user">
+  <input type="password" name="" placeholder="密码" class="login-pass">
+  <input type="button" name="" value="登录" class="login-submit">
+<script type="text/javascript">
+var pixelRatio = 1 / window.devicePixelRatio;
+document.write('<meta name="viewport" content="width=device-width,initial-scale='+ pixelRatio +',minimum-scale='+ pixelRatio +',maximum-scale='+ pixelRatio +',user-scalable=no" />');
+var html=document.getElementsByTagName("html")[0];
+var pageWidth=html.getBoundingClientRect().width;
+html.style.fontSize=pageWidth/16+"px";
+
+let onOff = true;
+$('.return').click(function(){
+  if (onOff) {
+    $('.nav_list').css('height', '400');
+
+  }else {
+    $('.nav_list').css('height', '0');
+  }
+  onOff = !onOff;
+});
+$('.login-submit').click(function(){
+  location.href="./index.html";
+})
+</script>
+</body>
+</html>

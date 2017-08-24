@@ -2,19 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+  <script src="js/swiper-3.4.2.min.js" charset="utf-8"></script>
+  <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
 </head>
-<style type="text/css">
-  div{
-    width: 300px;
-    height: 300px;
-    background: red;
-  }
-</style>
 <body>
-  <p>这是一个手机页面</p>
-  <div></div>
+  <header>
+    <a href="javascript:;" class="return"><img src="img/more.png" alt=""></a>
+    <span class="home">Home</span>
+    <a href="./login.html" class="list"><img src="img/people.png" alt=""></a>
+  </header>
+    <ul class="nav_list">
+      <li><a href="./index.html">首页</a></li>
+      <li><a href="./northAmerica.html">北美票房榜</a></li>
+      <li><a href="./commingsoon.html">即将上映</a></li>
+      <li>搜索影片</li>
+    </ul>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/3.jpg" alt=""></div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+</div>
+<div id="view">
+  <p class="view_title">正在热映</p>
+  <div class="view_list">
+      <!--<dl>
+        <dt><img src="img/1.jpg" alt=""></dt>
+        <dd>
+          <h2>战狼2<span>9.7分</span></h2>
+          <b>主演:吴京</b>
+          <i>影片类型:动作</i>
+          <a href="javascript:;">影片详情</a>
+        </dd>
+      </dl>-->
+  </div>
+</div>
+<script type="text/javascript">
+
+var pixelRatio = 1 / window.devicePixelRatio;
+document.write('<meta name="viewport" content="width=device-width,initial-scale='+ pixelRatio +',minimum-scale='+ pixelRatio +',maximum-scale='+ pixelRatio +',user-scalable=no" />');
+var html=document.getElementsByTagName("html")[0];
+var pageWidth=html.getBoundingClientRect().width;
+html.style.fontSize=pageWidth/16+"px";
+
+
+var mySwiper = new Swiper('.swiper-container',{
+  autoplay:1000,
+  scrollbar:'.swiper-scrollbar',
+});
+
+let onOff = true;
+$('.return').click(function(){
+  if (onOff) {
+    $('.nav_list').css('height', '400');
+
+  }else {
+    $('.nav_list').css('height', '0');
+  }
+  onOff = !onOff;
+});
+
+$.ajax({
+  url:'https://api.douban.com/v2/movie/in_theaters',
+  dataType:'jsonp',
+  success:function(data){
+    let str='';
+    $('.view_title').html(data.title);
+    console.log(data.subjects);
+      $(data.subjects).each((i,e)=>{
+      str +=`<dl>
+        <dt><img src=${e.images.medium} alt=""></dt>
+        <dd>
+          <h2>${e.title}<span>${e.rating.average}分</span></h2>
+          <b>导演:${e.directors[0].name}</b>
+          <i>影片类型:${e.genres[0]}</i>
+          <a href="javascript:;">影片详情</a>
+        </dd>
+      </dl>`
+      })
+    $('.view_list').html(str);
+  }
+});
+</script>
 </body>
 </html>

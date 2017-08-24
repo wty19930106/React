@@ -1,0 +1,37 @@
+@import '~antd/dist/antd.css';
+.menu{
+  background: #404040;
+}
+.primary{
+  margin-bottom:0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 64px;
+}
+.ant-layout-sider{
+  position: fixed;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected{
+  background: #17c4bb;
+}
+.ant-btn-primary {
+    color: #fff;
+    background-color: #17c4bb;
+    border-color: #17c4bb;
+  }
+.ant-menu-inline .ant-menu-item,.ant-menu-inline .ant-menu-submenu-title{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+}
+.tx{
+  float: right;
+  margin-top: 15px;
+  margin-right: 50px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

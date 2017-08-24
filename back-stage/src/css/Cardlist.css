@@ -1,0 +1,55 @@
+.cardgrid:nth-child(1){
+  width: 230px;
+  height: 80px;
+  background: yellow;
+}
+.cardgrid:nth-child(2){
+  width: 300px;
+  height: 80px;
+  background: skyblue;
+}
+.cardgrid:nth-child(3){
+  width: 390px;
+  height: 80px;
+  background: orange;
+}
+.cardgrid:nth-child(4){
+  width: 250px;
+  height: 80px;
+  background: rgb(0,255,170);
+}
+.cardgrid:nth-child(5){
+  width: 350px;
+  height: 80px;
+  background: rgb(240,27,45);
+}
+.cardgrid:nth-child(6){
+  width: 500px;
+  height: 80px;
+  background: rgb(85,121,237) ;
+}
+.cardgrid:nth-child(7){
+  width: 330px;
+  height: 80px;
+  background: rgb(239,206,232);
+}
+.cardgrid:hover .cardicon{
+  transform: scale(2) rotate(90deg) translateX(5px) translateY(-10px);
+  opacity: .5;
+}
+.cardicon{
+  transition:0.5s;
+  transform: scale(1);
+  float: left;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.cardgrid span{
+  font-size: 20px;
+  float: left;
+}
+.cardgrid b{
+  float: right;
+  color: #fff;
+  font-size: 20px;
+}

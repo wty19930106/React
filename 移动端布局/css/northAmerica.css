@@ -1,0 +1,168 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  border: 0;
+}
+.clearFix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+header {
+  width: 15.05rem;
+  height: 1.425rem;
+  padding: 0.2rem 0.4rem 0.25rem 0.55rem;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+header a {
+  float: left;
+  height: 1.425rem;
+  line-height: 1.425rem;
+}
+.return {
+  margin-right: 3.75rem;
+}
+.home {
+  float: left;
+  color: #fff;
+  font-size: 1rem;
+  margin-right: 4rem;
+}
+header a img {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+}
+.nav_list {
+  position: absolute;
+  left: 0;
+  top: 1.875rem;
+  z-index: 11;
+  padding-left: 0.375rem;
+  background: #000;
+  height: 0;
+  width: 15.125rem;
+  transition: .5s;
+  overflow: hidden;
+}
+.nav_list li {
+  margin-bottom: 0.375rem;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  font-size: 0.5rem;
+  color: #c9c9c9;
+}
+.nav_list li a {
+  list-style: none;
+}
+.swiper-container {
+  height: 7.5rem;
+  margin-top: 1.875rem;
+  position: relative;
+  background: #f1f1f1;
+}
+.swiper-container img {
+  width: 16.25rem;
+  height: 7.5rem;
+}
+#view {
+  width: 100%;
+}
+.view_title {
+  padding-left: 0.75rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: black;
+  margin-bottom: 0.375rem;
+  border-bottom: 2px solid #ccc;
+}
+.view_list dl {
+  height: 3.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #565454;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+}
+.view_list dt {
+  float: left;
+  margin-right: 1rem;
+}
+.view_list dd {
+  float: left;
+}
+.view_list dl dt img {
+  height: 3.75rem;
+  width: 2.5rem;
+}
+.view_list dl dd h2 {
+  margin-bottom: 0.5rem;
+  font-size: 0.5rem;
+  color: #444444;
+}
+.view_list dl dd span {
+  line-height: 1rem;
+  float: right;
+  font-size: 0.5rem;
+  color: #444444;
+}
+.view_list dl dd b {
+  display: block;
+  font-size: 0.5rem;
+}
+.view_list dl dd i {
+  font-style: normal;
+  font-size: 0.4rem;
+  color: #7f7f7f;
+}
+.view_list dl dd a {
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+  background: #2c9e29;
+  color: #fff;
+  border-radius: 0.075rem;
+  text-align: center;
+  height: 1rem;
+  border: 0;
+  font-size: 0.5rem;
+  line-height: 1rem;
+  margin-left: 4.5rem;
+}
