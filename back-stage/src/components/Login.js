@@ -2,9 +2,11 @@ import React,{Component} from 'react';
 import { BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import "../css/login.css";
 import App from '../App';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import CollectionsPage from "./signup";
+import $ from "jquery";
+import { Form, Icon, Input, Button, Checkbox,message} from 'antd';
 const FormItem = Form.Item;
-
+let result = [];
 
 class NormalLoginForm extends React.Component {
   handleSubmit = (e) => {
@@ -16,9 +18,16 @@ class NormalLoginForm extends React.Component {
     });
   }
 
+  loginclick = () =>{
+    let username = $('input:text').eq(0).val();
+    let password = $('input:password').eq(0).val();
+    this.props.checklog(username,password);
+  }
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
+      <div>
+
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
@@ -36,7 +45,7 @@ class NormalLoginForm extends React.Component {
         </FormItem>
         <FormItem>
           <Button type="primary" htmlType="submit" className="login-form-button" >
-            <Link to="/home">
+            <Link to="/home" onClick={this.loginclick}>
             Log in
             </Link>
           </Button>
@@ -46,9 +55,10 @@ class NormalLoginForm extends React.Component {
           })(
             <Checkbox className="remember">Remember me</Checkbox>
           )}
-          <a href="" className="zcdl">注册用户</a>
         </FormItem>
+        <CollectionsPage />
       </Form>
+      </div>
     );
   }
 }

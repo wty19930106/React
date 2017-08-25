@@ -12,7 +12,7 @@ body{
  background: url(../img/3.jpg) no-repeat center;
 }
 
-.ant-form{
+.login-form{
   position:absolute;
   left:0;
   right:0;
@@ -33,4 +33,18 @@ body{
 }
 .remember{
   color: #d0f7f8;
+}
+.signup{
+  background: none;
+  position: absolute;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  width: 80px;
+  left: 210px;
+  top: 155px;
+  border-color:#108ee9;
+}
+.ant-modal-content{
+  height: 315px;
 }

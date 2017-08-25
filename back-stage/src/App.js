@@ -72,6 +72,7 @@ class SiderDemo extends Component {
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }}>
           <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"  className="tx" />
+
         </Header>
           <Content style={{ margin: '0 16px 0 216px' }}>
             <Breadcrumb style={{ margin: '12px 0' }}>
